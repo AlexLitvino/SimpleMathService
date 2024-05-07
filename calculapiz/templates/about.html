@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculapiz - About</title>
+    </head>
+
+    <body>
+        <h1>Calculapiz v0.0.1</h1>
+
+        <div>
+            <h2>Description</h2>
+            <p>
+                This is a service that performs calculations on demand.
+                It is designed for practicing test automation skills.
+            </p>
+        </div>
+
+        <div>
+            <h2>Features</h2>
+            <div>
+                <h3>General terms</h3>
+                <ul>
+                    <li>Service returns result as float value rounded to 3 digits after point.</li>
+                    <li>Service doesn't have specific error handling.
+                        It is expected service responds with status code 400 to any error.
+                        All caught errors will be sent in response field <var>error_details</var></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Endpoints</h3>
+                Operations are available by endpoints like /api/v1/&lt;operation&gt;
+                <br>
+                v0.1 implements the following operations:
+                <ul>
+                    <li>add(op1: float, op2:float) - returns sum of two operands</li>
+                    <li>sub(op1: float, op2:float) - returns difference of two operands</li>
+                    <li>mlp(op1: float, op2:float) - returns product of two operands</li>
+                    <li>div(op1: float, op2:float) - returns quotient of two operands</li>
+                </ul>
+
+            </div>
+
+            <div>
+                <h3>Statistics</h3>
+                <p>
+                    Every request is logged at <var>/app/data/statistics.csv</var> file.
+                    Successfully performed requests are logged as timestamp, status, operation, operand1, operand2, result.
+                    Failed requests are logged as timestamp, status, exception message.
+                </p>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
