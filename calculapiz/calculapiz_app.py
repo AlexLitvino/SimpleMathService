@@ -16,20 +16,14 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 """
-import csv
 import logging
 import os
 import time
-from enum import Enum
 
 from flask import Flask, jsonify, request, send_file, redirect
 
-
-class Operations(Enum):
-    ADD = 'add'
-    SUB = 'sub'
-    MLP = 'mlp'
-    DIV = 'div'
+from operations import Operations
+from statistics_utils import log_statistics
 
 
 DATA_PATH = 'data'
@@ -39,12 +33,6 @@ STATISTICS_PATH = os.path.join(DATA_PATH, 'statistics.csv')
 app = Flask(__name__)
 
 logger = logging.getLogger()
-
-
-def log_statistics(stat_file_path, stat_data):
-    with open(stat_file_path, 'a') as csv_file:
-        csw_writer = csv.writer(csv_file)
-        csw_writer.writerow(stat_data)
 
 
 @app.route('/')
