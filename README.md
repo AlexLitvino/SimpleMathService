@@ -16,6 +16,6 @@ Download image locally. Specify required version in `<tagname>`:
 
 Start container. `<LOCAL_MOUNTED_DIR>` - directory on your machine where file with statistics will be saved
 
-    docker run --rm -p 5000:5000 -v <LOCAL_MOUNTED_DIR>:/app/data alexlitvino/calculapiz:<tagname>
+    docker run --rm -p 5000:5000 -v <LOCAL_MOUNTED_DIR>:/calculapiz/data alexlitvino/calculapiz:<tagname>
 
 Service will be available at [http://localhost:5000/](http://localhost:5000/)

@@ -1,10 +1,10 @@
 FROM python:3.9
 
-WORKDIR /app
+WORKDIR /calculapiz
 
-COPY . /app
+COPY . /calculapiz
 
-RUN ["pip3", "install", "-r", "requirements.txt"]
+RUN ["pip3", "install", "."]
 
 ENV FLASK_APP=calculapiz_app.py
 
